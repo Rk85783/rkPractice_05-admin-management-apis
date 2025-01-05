@@ -1,5 +1,5 @@
 {
-  "name": "05-admin-management",
+  "name": "05-admin-management-apis",
   "version": "1.0.0",
   "main": "app.js",
   "type": "module",
