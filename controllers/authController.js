@@ -1,5 +1,6 @@
 import bcrypt from "bcryptjs";
 import User from "../models/User.js";
+import { generateToken } from "../service/authService.js";
 
 export const register = async (req, res) => {
 	try {
@@ -27,7 +28,7 @@ export const login = async (req, res) => {
 		if (!isMatched) {
 			return res.json({ message: "Invalid credentials!" });
 		}
-		const token = null
+		const token = generateToken(user);
 		res.json({ message: "Registration successfully!", data: { token } });
 	} catch (error) {
 		console.log("register(): catch error: %o", error);
