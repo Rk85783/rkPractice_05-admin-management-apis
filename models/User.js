@@ -2,8 +2,6 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 const userSchema = new Schema({
-	firstName: String,
-	lastName: String,
 	email: {
 		type: String,
 		required: true,
@@ -21,7 +19,16 @@ const userSchema = new Schema({
 		type: String,
 		enum: ["admin", "user"],
 		default: "user"
-	}
+	},
+	firstName: String,
+	lastName: String,
+	dateOfBirth: Date,
+	age: Number,
+	gender: {
+		type: String,
+		enum: ["Male", "Female"]
+	},
+	hobbies: [String]
 }, {
 	timestamps: true
 });
